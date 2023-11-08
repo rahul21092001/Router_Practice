@@ -7,6 +7,7 @@ import Notfound from "./Components/Notfound";
 import Contact from "./Components/Contact";
 import Com_1 from "./Components/Com_1";
 import Com_2 from "./Components/Com_2";
+import User from "./Components/User";
 function App() {
   return (
     <div className="flex flex-col gap-10 mt-8">
@@ -19,7 +20,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route index element={<Home />}></Route>
-          <Route path="/About" element={<About />}></Route>
+          <Route path="/About" element={<About />}>
+            <Route path="/About/:name" element={<User/>}></Route>"
+          </Route>
           <Route path="/Contact" element={<Contact />}>
             <Route path="/Contact/Com_1" element={<Com_1/>}></Route>
             <Route path="/Contact/Com_2" element={<Com_2/>}></Route>
